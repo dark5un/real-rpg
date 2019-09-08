@@ -121,16 +121,16 @@ func runClientRoll(service micro.Service, eval string) {
 func main() {
 	var clientRoll string
 	service := micro.NewService(
-		micro.Name("dice"),
-		micro.Version("latest"),
+		micro.Version("0.0.1"),
 		micro.Metadata(map[string]string{
-			"type": "dnd",
+			"type": "gaming service",
 		}),
 		micro.Flags(cli.StringFlag{
 			Name:        "roll",
 			Destination: &clientRoll,
 			Usage:       "Roll the dice",
 		}),
+		micro.Name("dice"),
 	)
 
 	service.Init(

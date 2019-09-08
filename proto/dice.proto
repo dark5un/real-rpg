@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+service Dice {
+	rpc Roll(RollRequest) returns (RollResponse) {}
+}
+
+message RollRequest {
+	string expression = 1;
+}
+
+message RollResponse {
+	int64 result = 2;
+	string evaluation = 3;
+}
